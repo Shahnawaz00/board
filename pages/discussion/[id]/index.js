@@ -111,7 +111,7 @@ export default function Discussion({ discussion, users, spaces, comments, discus
 
 
 //get static props for all discussion in the database
-export const getStaticProps = async ({params}) => {
+export const getServerSideProps = async ({params}) => {
     const discussionRes = await fetch(`${server}/api/discussions/getDiscussion?id=${params.id}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -151,22 +151,4 @@ export const getStaticProps = async ({params}) => {
             discussions
         }
     };
-}
-
-//get static paths for all discussion in the database
-export const getStaticPaths = async () => {
-    const discussionsRes = await fetch(`${server}/api/discussions`, {
-        method: "GET",
-        headers: {"Content-Type": "application/json"},
-    });
-    const discussions = await discussionsRes.json();
-    const paths = discussions.map(discussion => ({
-        params: {
-            id: discussion.id.toString()
-        }
-    }))
-    return {
-        paths,
-        fallback: false
-    }
 }
