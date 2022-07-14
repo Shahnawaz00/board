@@ -1,0 +1,172 @@
+$primary-color: #b1e693;
+$secondary-color: #6ecb63;
+$tertiary-color: #270082;
+
+.menuWrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    .toggler {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 60px;
+        height: 50px;
+        padding: 1rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+    }
+}
+// hamburger line
+.menuWrap {
+    .hamburger {
+        div {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background-color: #891204;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+        div:before,
+        div:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: -10px;
+            width: 100%;
+            height: 2px;
+            background: inherit;
+        }
+        div:after {
+            top: 10px;
+        }
+    }
+}
+
+// toggler animate
+.menuWrap {
+    .toggler:checked + .hamburger {
+        div {
+            transform: rotate(135deg);
+        }
+        div:after,
+        div:before {
+            top: 0;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+// toggle menu
+.toggler:checked ~ .menu {
+    transition-duration: 0.4s;
+    right: 0;
+}
+
+// menu
+
+.menuWrap {
+    .menu {
+        position: fixed;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        top: 53px;
+        right: -1000px;
+        line-height: 1.3;
+        background-color: white;
+        height: 100%;
+        width: 40%;
+        transition: all 0.5s ease;
+
+        @media (max-width: 540px) {
+            width: 70%;
+        }
+
+        ul {
+            list-style: none;
+            text-align: start;
+            padding: 0;
+            height: 100%;
+            .loginBtn {
+                margin-left: 30%;
+                margin-bottom: 25%;
+            }
+
+            li {
+                display: flex;
+                background-color: white;
+                margin: 25px 0;
+                color: #636466;
+                font-size: 16px;
+                align-items: center;
+
+                * {
+                    margin-left: 18px;
+                }
+            }
+            .activeLink {
+                color: #891204;
+            }
+            hr {
+                height: 1px;
+                border: none;
+                background-image: linear-gradient(to right, #ffffff, #bababa, #ffffff);
+            }
+        }
+    }
+}
+// logo sizing
+.hamburgerLogo {
+    display: none;
+}
+
+.accountLi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .account {
+        border-radius: 20px;
+    }
+    div {
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+}
+
+.loginBtnMain {
+    @media screen and (max-width: 600px) {
+        position: absolute;
+        padding-left: 60%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .menuWrap {
+        display: none;
+    }
+    .loginBtnMain {
+        display: none;
+    }
+}

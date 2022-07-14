@@ -1,0 +1,57 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 13%;
+
+    @media (max-width: 768px) {
+        margin: 2% 5%;
+    }
+}
+.counter {
+    color: #636466;
+    margin-bottom: 20px;
+}
+
+//spaces
+.spaces {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .space {
+        background-color: white;
+        border-radius: 2px;
+        border: 1px solid #e6e6e6;
+        margin-bottom: 10px;
+        padding: 20px;
+        font-size: 14px;
+        cursor: pointer;
+
+        .spaceName {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+}
+.users {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .user {
+        background-color: white;
+        border-radius: 2px;
+        border: 1px solid #e6e6e6;
+        margin-bottom: 10px;
+        padding: 20px;
+        font-size: 14px;
+        cursor: pointer;
+
+        .userName {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+}

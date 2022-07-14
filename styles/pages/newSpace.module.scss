@@ -1,0 +1,122 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    width: 60%;
+    color: #636466;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+
+    // title input
+    input {
+        width: 100%;
+        border: none;
+        padding: 15px 25px;
+        border-bottom: 2px solid #f8f8f8;
+        font-size: 18px;
+        border-radius: 1px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    // content input
+
+    textarea {
+        width: 100%;
+        height: 10vh;
+        border: none;
+        padding: 15px 25px;
+        font-size: 14px;
+        border-bottom: 2px solid #f8f8f8;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            font-family: inherit;
+        }
+    }
+
+    // bottom div
+
+    .bottomDiv {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 25px;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        // submit button
+
+        .submitDiv {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @media (max-width: 768px) {
+                margin-top: 10px;
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+        }
+
+        button {
+            margin-left: 20px;
+            padding: 6px 30px;
+            border: 1px solid #3752ff;
+            border-radius: 20px;
+            background-color: white;
+            color: #636466;
+            font-size: 16px;
+            transition: 0.3s;
+            cursor: pointer;
+
+            @media (max-width: 768px) {
+                padding: 3px 15px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// space name check colors
+.green {
+    color: green;
+    font-size: 13px;
+}
+.red {
+    font-size: 13px;
+    color: red;
+}
+.disabled {
+    opacity: 0.5;
+}
+.enabled {
+    &:hover {
+        background-color: #3752ff;
+        color: white;
+        transition: 0.3s;
+    }
+}

@@ -1,0 +1,33 @@
+.spaceMain {
+    display: flex;
+    justify-content: space-between;
+    margin: 4% 13%;
+
+    @media (max-width: 700px) {
+        margin: 2% 5%;
+        flex-direction: column;
+    }
+}
+.mobileSpace {
+    display: none;
+
+    @media (max-width: 700px) {
+        display: block;
+    }
+}
+.spaceDiscussions {
+    margin-right: 30px;
+
+    @media (max-width: 700px) {
+        margin-right: 0;
+    }
+}
+
+.section2Component {
+    @media (max-width: 700px) {
+        display: none;
+    }
+}
+.empty {
+    color: #636466;
+}

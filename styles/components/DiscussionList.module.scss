@@ -1,0 +1,59 @@
+// single discussion div
+.discussion {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 15px 20px;
+    border-radius: 2px;
+    line-height: 1.5;
+    word-spacing: 1px;
+    margin-bottom: 5px;
+}
+.discussionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .name {
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .bio {
+        font-size: 14px;
+        color: #636466;
+    }
+    .time {
+        font-size: 13px;
+        color: #636466;
+    }
+    .space {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.discussionContent {
+    h3 {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 17px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .readMore {
+        font-size: 15px;
+        color: #0041c2;
+    }
+}
+.header2 {
+    display: flex;
+    align-items: center;
+
+    .header2_1 {
+        margin-right: 10px;
+    }
+}

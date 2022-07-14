@@ -1,0 +1,185 @@
+// desktop nav
+.nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 15%;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 1308px) {
+        padding: 0.5% 2%;
+    }
+    @media (max-width: 1100px) {
+        padding: 0.5%;
+        justify-content: space-around;
+    }
+    @media (max-width: 400px) {
+        padding: 2%;
+    }
+}
+.navDiv {
+    display: flex;
+    margin-right: 30px;
+    margin-left: 50px;
+}
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+
+    span {
+        display: none;
+    }
+    &:hover {
+        span {
+            display: block;
+            position: absolute;
+            top: 110%;
+            background-color: white;
+            padding: 7px 13px;
+            font-size: 13px;
+            border-radius: 20px;
+            color: #636466;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+            @media (max-width: 1100px) {
+                top: 115%;
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
+
+// search bar
+//  main div
+.searchMain {
+    width: 30%;
+    position: relative;
+}
+// input field
+.search {
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 1px;
+    width: 100%;
+    &:focus {
+        outline: none;
+
+        // display block to sibling element
+        & + .dropdown {
+            display: flex;
+        }
+    }
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
+// dropdown on search focus
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #636466;
+
+    p {
+        margin-left: 10px;
+    }
+    &:hover {
+        cursor: pointer;
+        display: flex;
+    }
+}
+//user icon
+.account {
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    padding: 0 15px;
+    align-items: center;
+    width: 105px;
+    @media (max-width: 1000px) {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        .accountDropdown {
+            display: block;
+        }
+    }
+}
+.logo {
+    cursor: pointer;
+}
+.accountDropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 15px 15px;
+    top: 140%;
+    right: 0;
+    cursor: default;
+
+    span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 5px 10px;
+        color: #636466;
+
+        * {
+            margin-top: 3px;
+        }
+        p {
+            margin-right: 15px;
+            font-size: 14px;
+            white-space: nowrap;
+            &:hover {
+                color: #891204;
+            }
+        }
+    }
+    .accountName {
+        font-size: 16px;
+        font-weight: bold;
+        align-self: center;
+        margin-bottom: 7px;
+        cursor: default;
+    }
+}
+
+.accountDropdown:after {
+    content: ""; /* Required to display content */
+    position: absolute; /* Sets the position absolute to the top div */
+    top: 0;
+    right: 15px;
+    margin-left: -15px;
+    margin-top: -15px; /* Set margin equal to border px */
+    width: 100%;
+    height: 0;
+    border-bottom: solid 15px transparent; /* Creates the arrow pointing up, to change to a notch instead user border-top */
+    border-left: solid 15px transparent; /* Creates triangle effect */
+    border-right: solid 15px transparent; /* Creates triangle effect */
+}

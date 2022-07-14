@@ -1,0 +1,145 @@
+// styling main div of discussion page with margins
+.discussionMain {
+    display: flex;
+    flex-direction: column;
+    margin: 4% 18%;
+
+    @media (max-width: 768px) {
+        margin: 2% 5%;
+    }
+}
+// the discussion at the top
+.discussion {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 15px 20px;
+    border-radius: 2px;
+    line-height: 1.5;
+    word-spacing: 1px;
+}
+.discussionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .header1,
+    .header2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .header1_1 {
+            margin-left: 10px;
+        }
+        .header2_1 {
+            margin-right: 8px;
+        }
+    }
+    .userImage {
+        border-radius: 20px;
+    }
+
+    .name {
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .bio {
+        font-size: 14px;
+        color: #636466;
+    }
+    .time {
+        font-size: 13px;
+        color: #636466;
+    }
+    .space {
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+
+.discussionContent {
+    h3 {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 17px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .readMore {
+        font-size: 15px;
+        color: #0041c2;
+    }
+}
+
+//title for comment section
+
+.commentTitle {
+    color: #616161;
+    margin: 3% 0;
+
+    @media (max-width: 500px) {
+        margin: 8% 0;
+    }
+}
+
+// new comment
+.newComment {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 15px 20px;
+    border-radius: 2px;
+    line-height: 1.5;
+    word-spacing: 1px;
+    margin-bottom: 20px;
+
+    textarea {
+        // comment content
+        border: none;
+        background-color: #ebebeb;
+        margin-bottom: 15px;
+        padding: 15px 25px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    div {
+        //div for the buttons
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    p {
+        // letter counter
+        font-size: 16px;
+        color: #636466;
+        margin-right: 20px;
+    }
+
+    button {
+        // submit button
+        padding: 6px 20px;
+        border: 1px solid #3752ff;
+        border-radius: 20px;
+        background-color: white;
+        color: #636466;
+        font-size: 14px;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #3752ff;
+            color: white;
+            transition: 0.3s;
+        }
+    }
+}

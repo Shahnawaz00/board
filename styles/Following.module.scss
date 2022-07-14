@@ -1,0 +1,60 @@
+.following {
+    margin: 2% 15%;
+
+    @media (max-width: 900px) {
+        margin: 2% 5%;
+    }
+
+    h1 {
+        color: #616161;
+        margin: 8px;
+        margin-bottom: 20px;
+    }
+}
+
+.eachSpace {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 15px 20px;
+    border-radius: 2px;
+    line-height: 1.5;
+    word-spacing: 1px;
+    margin: 8px;
+}
+
+.eachSpaceHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .spaceName {
+        font-size: 16px;
+        font-weight: 600;
+        padding-right: 20px;
+    }
+
+    .spaceUnfollow {
+        font-size: 12px;
+        color: #ff1414;
+        cursor: pointer;
+    }
+}
+.spaceDescription {
+    font-size: 14px;
+}
+.spaceUnfollowed {
+    cursor: default;
+    color: grey;
+    font-size: 12px;
+    &::after {
+        content: "ed";
+    }
+}
+.emptyMessage {
+    margin: 8px;
+    font-size: 14px;
+    color: #616161;
+}
