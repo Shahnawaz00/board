@@ -28,8 +28,8 @@ export default function Edit() {
     }, [userId]);
 
     //states for form
-    const [name, setName] = useState(session.user.name);
-    const [bio, setBio] = useState(session.userBio);
+    const [name, setName] = useState(session ? session.user.name : '');
+    const [bio, setBio] = useState(session ? session.userBio : '');
 
 
     //submit form
