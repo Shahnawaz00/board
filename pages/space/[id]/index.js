@@ -41,7 +41,7 @@ export default function Space({ space, discussions, users, spaces, suggestedSpac
 // server side
 
 // get static props for a space
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const userId = 1
 
   const spaceRes = await fetch(`${server}/api/spaces/getSpace?id=${params.id}`, {
@@ -53,11 +53,11 @@ export async function getStaticProps({ params }) {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
-  const spacesRes = await fetch(`${server}/api/spaces", {        // get all spaces to to show info in each discussion
+  const spacesRes = await fetch(`${server}/api/spaces`, {        // get all spaces to to show info in each discussion
   method: "GET",
   headers: {"Content-Type": "application/json"},
 });
-const usersRes = await fetch(`${server}/api/users", {       // get all users to to show info in each discussion
+const usersRes = await fetch(`${server}/api/users` , {
   method: "GET",
   headers: {"Content-Type": "application/json"},
 });
@@ -94,22 +94,3 @@ headers: { "Content-Type": "application/json" },
     }
   }
 }
-
-
-// get static paths for all spaces in the database
-export const getStaticPaths = async () => {
-    const spacesRes = await fetch(`${server}/api/spaces", {
-        method: "GET",
-        headers: {"Content-Type": "application/json"},
-    });
-    const spaces = await spacesRes.json();
-    const paths = spaces.map(space => ({
-        params: {
-        id: space.id.toString()
-        }
-    }))
-    return {
-        paths,
-        fallback: false
-    }
- }

@@ -111,7 +111,7 @@ export default function NewDiscussion({ spaces }) {
 
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`${server}/api/spaces", {
+  const res = await fetch(`${server}/api/spaces`, {
     method: "GET",
     headers: {"Content-Type": "application/json"},
 });

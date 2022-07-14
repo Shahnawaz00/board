@@ -36,7 +36,7 @@ export const getServerSideProps = async ({params}) => {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     });
-    const usersRes = await fetch(`${server}/api/users", {       // get all users to to show info in each discussion
+    const usersRes = await fetch(`${server}/api/users`, {       // get all users to to show info in each discussion
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });

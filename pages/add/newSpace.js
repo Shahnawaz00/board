@@ -130,7 +130,7 @@ const NewSpace = ({ spaces }) => {
 
 export const getServerSideProps = async () => {
 
-    const spacesRes = await fetch(`${server}/api/spaces", {
+    const spacesRes = await fetch(`${server}/api/spaces`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     });

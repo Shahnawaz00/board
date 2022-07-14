@@ -27,7 +27,7 @@ export const getServerSideProps = async ({ params }) => {
 
   console.log(params.search)
 
-    const usersRes = await fetch(`${server}/api/users");
+    const usersRes = await fetch(`${server}/api/users`);
 
     const users = await usersRes.json();
 

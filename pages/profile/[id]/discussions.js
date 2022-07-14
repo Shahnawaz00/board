@@ -34,11 +34,11 @@ export const getServerSideProps = async ({ params }) => {
     headers: { "Content-Type": "application/json" },
   });
 
-    const spacesRes = await fetch(`${server}/api/spaces", {        // get all spaces to to show info in each discussion
+    const spacesRes = await fetch(`${server}/api/spaces`, {        // get all spaces to to show info in each discussion
       method: "GET",
       headers: {"Content-Type": "application/json"},
     });
-    const usersRes = await fetch(`${server}/api/users", {       // get all users to to show info in each discussion
+    const usersRes = await fetch(`${server}/api/users`, {       // get all users to to show info in each discussion
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
