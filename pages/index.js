@@ -29,7 +29,6 @@ export default function Home({ spaces, users }) {
       <Head>
         <title>Board</title>
         <meta name='board home page' content='board hoome page, discussions' />
-        <link rel=" icon" href="board.ico" />
       </Head>
 
       <div className={styles.homeTitle} ><h1>Feed</h1></div>
