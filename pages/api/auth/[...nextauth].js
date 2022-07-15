@@ -19,5 +19,6 @@ export default NextAuth({
     session.userBio = user.bio;
     return session
   }
-}
+  },
+  secret: process.env.NEXTAUTH_SECRET
 })
