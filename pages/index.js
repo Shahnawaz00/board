@@ -15,7 +15,7 @@ export default function Home({ spaces, users }) {
   const userId = session ? session.userId : null;
   useEffect(() => {
     if (userId) {
-      fetch(`${server}/api/users/getFeed?userId=${userId}`)
+      fetch(`/api/users/getFeed?userId=${userId}`)
         .then(res => res.json())
         .then(data => {
           setDiscussions(data);
@@ -29,6 +29,7 @@ export default function Home({ spaces, users }) {
       <Head>
         <title>Board</title>
         <meta name='board home page' content='board hoome page, discussions' />
+        <link rel=" icon" href="board.ico" />
       </Head>
 
       <div className={styles.homeTitle} ><h1>Feed</h1></div>
