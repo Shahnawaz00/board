@@ -16,7 +16,6 @@ export default function Discussion({ discussion, users, spaces, comments, discus
    // discussion main user info
 
   const discussionUser = users.find(user => user.id === discussion.userId)
-  console.log(discussionUser)
   // discussion space info
   const discussionSpace = spaces.map(space => {
     if (space.id === discussion.spaceId)
@@ -50,7 +49,6 @@ export default function Discussion({ discussion, users, spaces, comments, discus
     }
     //check response, if success is false, dont take them to success page
     } catch (error) {
-      console.log("there was an error submitting", error);
       setLoading(false)
       setMessage('unexpected error')
     }

@@ -7,7 +7,7 @@ import Edit from './Edit';
 
 export default function MoreOptions({discussion}) {
   return (
-    <div className={styles.main} >
+    <div className={styles.main} key={discussion.id} >
       <div className={styles.dots} >
         <BsThreeDotsVertical size={20} />
         <div className={styles.options} >

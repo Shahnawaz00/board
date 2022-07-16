@@ -25,13 +25,11 @@ export default function Comments({ results, discussions, users }) {
 
 export const getServerSideProps = async ({ params }) => {
 
-  console.log(params.search)
-
     const usersRes = await fetch(`${server}/api/users`);
 
     const users = await usersRes.json();
 
-    const discussionsRes = await fetch('${server}/api/discussions')
+    const discussionsRes = await fetch(`${server}/api/discussions`)
     const discussions = await discussionsRes.json()
 
     const resultsRes = await fetch(`${server}/api/comments/search?search=${params.search}`)

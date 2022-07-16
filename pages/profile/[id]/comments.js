@@ -6,8 +6,6 @@ import Head from 'next/head';
 
 export default function Discussions({users, comments, user, discussions}) {
 
-
-  console.log(comments)
   return (
     <div className={styles.commentsMain} >
           <Head>
@@ -16,7 +14,7 @@ export default function Discussions({users, comments, user, discussions}) {
           </Head>
           <Profile user={user} />
           <div className={styles.commentList}>
-        {comments.length !== 0 ? <CommentList comments={comments} users={users} /> : <span>{user.name } has not made any comments yet</span>}
+        {comments.length !== 0 ? <CommentList comments={comments} users={users} discussions={discussions} /> : <span>{user.name } has not made any comments yet</span>}
           </div>
     </div>
   )

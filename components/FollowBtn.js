@@ -15,10 +15,8 @@ export default function FollowBtn({space}) {
         .then(data => {
           if (data.find((spaceData) => spaceData.id === space.id)) {
             setFollowing(true);
-            console.log("yes following");
           } else {
             setFollowing(false);
-            console.log("not following");
           }
         }
       )
@@ -36,11 +34,9 @@ const handleFollow = async (e) => {
     if (response.status !== 200){
     } else {
       setFollowing(true);
-      console.log("following");
     }
     } catch (error) {
-      console.log("there was an error submitting", error);
-    }
+          }
 }
 const handleUnfollow = async (e) => {
   const body = {id : userId, spaceId : space.id }
@@ -53,11 +49,9 @@ const handleUnfollow = async (e) => {
   if (response.status !== 200){
   } else {
     setFollowing(false);
-    console.log("unfollowing");
   }
   } catch (error) {
-    console.log("there was an error submitting", error);
-  }
+      }
 }
   return (
     <div>

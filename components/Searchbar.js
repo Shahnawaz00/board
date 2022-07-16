@@ -38,16 +38,16 @@ export default function Searchbar() {
           />
       </div>
       <div className={styles.navBtns} >
-              <button className={router.pathname === '/search/[search]/discussions' && styles.red  } >
+              <button className={router.pathname === '/search/[search]/discussions' ? styles.red : ''  } >
                   <Link href={`/search/${router.query.search}/discussions`}  >Discussions</Link>
               </button>
-              <button className={router.pathname === '/search/[search]/comments' && styles.red  } >
+              <button className={router.pathname === '/search/[search]/comments' ? styles.red : ''   } >
                   <Link href={`/search/${router.query.search}/comments`} >Comments</Link>
               </button>
-              <button className={router.pathname === '/search/[search]/users' && styles.red  } >
+              <button className={router.pathname === '/search/[search]/users' ? styles.red : ''   } >
                   <Link href={`/search/${router.query.search}/users`} >Users</Link>
               </button>
-              <button className={router.pathname === '/search/[search]/spaces' && styles.red  } >
+              <button className={router.pathname === '/search/[search]/spaces' ? styles.red : ''   } >
                   <Link href={`/search/${router.query.search}/spaces`} >Spaces</Link>
               </button>
         </div>

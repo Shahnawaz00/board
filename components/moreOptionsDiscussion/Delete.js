@@ -21,15 +21,12 @@ export default function Delete({ discussion }) {
                         });
                         if (response.status !== 200){
                             // on error
-                            console.log("there was an error submitting")
                         } else {
                             // on success, clear state to be able to store next bookmarkId
                             router.back()
-                            console.log("deleted")
                         }
                     } catch (error) {
-                        console.log("there was an error submitting", error);
-                    }
+                                            }
                 }
             };
   return (

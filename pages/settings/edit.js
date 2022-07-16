@@ -14,7 +14,6 @@ export default function Edit() {
 
     const [user, setUser] = useState([]);
     const { data: session } = useSession();
-    console.log(session)
     const userId = session ? session.userId : null;
     useEffect(() => {
       if (userId) {
@@ -58,7 +57,6 @@ export default function Edit() {
     }
     //check response, if success is false, dont take them to success page
     } catch (error) {
-      console.log("there was an error submitting", error);
       setLoading(false)
     }
   }

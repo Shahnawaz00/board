@@ -16,9 +16,6 @@ export default function Bookmark({discussion}) {
   const [bookmarksDB, setBookmarksDB] = useState('');         //hold all user bookmarks from database
     const [bookmarkIds, setBookmarkIds] = useState('');         //hold all ids from the bookmarksDB array... to be able to use .includes method
 
-    const [isLoading, setIsLoading] = useState(false);           // set loading state
-
-
   // fetch bookmarks from database.. useEffect is used to be able to update the bookmark icons without refreshing the page
   useEffect(() => {
     async function fetchBookmarks() {
@@ -29,7 +26,7 @@ export default function Bookmark({discussion}) {
         });
         const data = await res.json();
         setBookmarksDB(data);                    // set bookmarksDB
-        setBookmarkIds(data.map(bookmark => bookmark.id))  // set bookmarkIds
+        setBookmarkIds(data.map(bookmark => bookmark.id));  // set bookmarkIds
       }
     }
     fetchBookmarks();
@@ -54,8 +51,7 @@ export default function Bookmark({discussion}) {
           setAddBookmarkId('')
         }
         } catch (error) {
-          console.log("there was an error submitting", error);
-        }
+                  }
       }
     }
     handleAddBookmark()
@@ -77,8 +73,7 @@ export default function Bookmark({discussion}) {
           setRemoveBookmarkId('')
         }
         } catch (error) {
-          console.log("there was an error submitting", error);
-        }
+                  }
       }
     }
     handleRemoveBookmark()
@@ -89,13 +84,13 @@ export default function Bookmark({discussion}) {
         {/* check if discussion is bookmarked, and display appropriate icon...
          when icon is clicked, discussion id is saved in a state to trigger patch requests for adding/removing bookmark */}
          {bookmarkIds.includes(discussion.id) ? (
-          <div  >
-          <BsBookmarkFill size={18}  onClick={() => { setRemoveBookmarkId(discussion.id); }} />
+          <div onClick={() =>  setRemoveBookmarkId(discussion.id)} >
+          <BsBookmarkFill size={18}   />
           <span>Bookmarked</span>
           </div>
          ) : (
-          <div>
-            <BsBookmark size={18} onClick={() => setAddBookmarkId(discussion.id)} className={styles.bookmark} />
+          <div onClick={() => setAddBookmarkId(discussion.id)}>
+            <BsBookmark size={18}  className={styles.bookmark} />
             <span>Bookmark</span>
           </div>
          )}

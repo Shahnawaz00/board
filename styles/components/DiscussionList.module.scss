@@ -16,6 +16,23 @@
     align-items: center;
     margin-bottom: 20px;
 
+    .header1,
+    .header2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .header1_1 {
+            margin-left: 15px;
+        }
+        .header2_1 {
+            margin-right: 10px;
+        }
+    }
+    .userImage {
+        border-radius: 20px;
+    }
     .name {
         font-size: 15px;
         font-weight: 600;
@@ -47,13 +64,5 @@
     .readMore {
         font-size: 15px;
         color: #0041c2;
-    }
-}
-.header2 {
-    display: flex;
-    align-items: center;
-
-    .header2_1 {
-        margin-right: 10px;
     }
 }

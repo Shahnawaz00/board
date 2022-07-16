@@ -26,8 +26,7 @@ export default function SpacesList({ spaces }) {
                 setSpaceId('')
             }
             } catch (error) {
-              console.log("there was an error submitting", error);
-            }
+                          }
         }
         handleFollow()
    }

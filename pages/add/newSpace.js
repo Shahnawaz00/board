@@ -79,7 +79,6 @@ const NewSpace = ({ spaces }) => {
       }
       //check response, if success is false, dont take them to success page
       } catch (error) {
-        console.log("there was an error submitting", error);
         setLoading(false)
         setMessage('unexpected error')
       }

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import FollowBtn from "../components/FollowBtn";
 import Head from 'next/head';
-import { server } from '../config';
 
 export default function Following() {
 
@@ -14,7 +13,7 @@ export default function Following() {
   const userId = session ? session.userId : null;
   useEffect(() => {
     if (userId) {
-      fetch(`${server}/api/users/getFollowing?userId=${userId}`)
+      fetch(`/api/users/getFollowing?userId=${userId}`)
         .then(res => res.json())
         .then(data => {
           setFollowing(data);

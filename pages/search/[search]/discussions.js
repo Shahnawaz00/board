@@ -25,15 +25,13 @@ export default function Discussions({ results, spaces, users }) {
 
 export const getServerSideProps = async ({ params }) => {
 
-  console.log(params.search)
-
     const spacesRes = await fetch(`${server}/api/spaces`);
     const usersRes = await fetch(`${server}/api/users`);
 
     const users = await usersRes.json();
     const spaces = await spacesRes.json()
 
-    const discussionsRes = await fetch('${server}/api/discussions')
+    const discussionsRes = await fetch(`${server}/api/discussions`)
     const discussions = await discussionsRes.json()
 
     const resultsRes = await fetch(`${server}/api/discussions/search?search=${params.search}`)

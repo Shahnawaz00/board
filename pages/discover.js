@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { server } from '../config';
 import Link from 'next/link';
 import DiscoverSpaces from '../components/DiscoverSpaces';
 import styles from '../styles/Discover.module.scss'

@@ -35,7 +35,6 @@ export const Nav = () => {
       } else {
         router.push(`/search/${search}/discussions`)
       }
-      console.log('entered')
     }
   }
 
