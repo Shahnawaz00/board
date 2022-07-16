@@ -12,7 +12,7 @@ export default function SuggestedSpaces() {
   const userId = session ? session.userId : null;
   useEffect(() => {
     if (userId) {
-      fetch(`api/users/getDiscover?userId=${userId}`)
+      fetch(`/api/users/getDiscover?userId=${userId}`)
         .then(res => res.json())
         .then(data => {
           setSuggestedSpaces(data);
