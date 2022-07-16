@@ -12,7 +12,7 @@ const DiscoverSpaces = () => {
   const userId = session ? session.userId : null;
   useEffect(() => {
     if (userId) {
-      fetch(`${server}/api/users/getDiscover?userId=${userId}`)
+      fetch(`/api/users/getDiscover?userId=${userId}`)
         .then(res => res.json())
         .then(data => {
           setSpaces(data);

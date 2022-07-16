@@ -10,7 +10,7 @@ export default function FollowBtn({space}) {
   const [following, setFollowing] = useState();
   useEffect(() => {
     if (userId) {
-      fetch(`${server}/api/users/getFollowing?userId=${userId}`)
+      fetch(`/api/users/getFollowing?userId=${userId}`)
         .then(res => res.json())
         .then(data => {
           if (data.find((spaceData) => spaceData.id === space.id)) {
