@@ -9,14 +9,14 @@ const SpaceInfo = ({ space }) => {
   const [discussionsCount, setDiscussionsCount] = useState(0);          // number of discussions
   useEffect(() => {
     // fetch number of followers by querying with spaceId
-    fetch(`${server}/api/spaces/getFollowers?spaceId=${space.id}`)
+    fetch(`/api/spaces/getFollowers?spaceId=${space.id}`)
       .then((res) => res.json())
       .then((data) => {
         setFollowersCount(data.length);                  // set number of followers
       }
     );
     // fetch number of discussions by querying with spaceId
-    fetch(`${server}/api/spaces/getDiscussions?spaceId=${space.id}`)
+    fetch(`/api/spaces/getDiscussions?spaceId=${space.id}`)
       .then((res) => res.json())
       .then((data) => {
         setDiscussionsCount(data.length);              // set number of discussions

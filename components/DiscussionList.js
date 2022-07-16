@@ -11,7 +11,7 @@ const DiscussionList = ({ discussions, users, spaces }) => {
 
   //userimage state
   return (
-    <div>
+    <div className={styles.discussionList} >
         {discussions.map(discussion => (
           <div className={styles.discussion} key={discussion.id} id={discussion.id} >
             {/* header */}
