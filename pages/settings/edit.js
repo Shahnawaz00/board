@@ -86,9 +86,8 @@ export default function Edit() {
               </button>
              </Link>
               </div>
-              {loading && <Loader/> }
-
           </form>
+          <span>{loading && <Loader/> }</span>
         </div>
         ) : <LoginBtn/>
   )
