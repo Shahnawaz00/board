@@ -59,6 +59,7 @@
     }
 }
 .delete {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -72,4 +73,79 @@
     span {
         margin-left: 3px;
     }
+    .deleteAfter {
+        text-decoration: line-through;
+        &:hover {
+            cursor: default;
+        }
+        &::after {
+            content: "d";
+        }
+    }
+}
+// delete confirmation
+.confirmation {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 20px;
+    position: "fixed";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            padding: 6px 15px;
+            border: none;
+            border-radius: 2px;
+            font-size: 12px;
+            transition: 0.3s;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .confirm {
+            background-color: #891204;
+            color: white;
+
+            &:hover {
+                background-color: #cd1500;
+            }
+        }
+        .cancel {
+            background-color: #c1c1c1;
+            color: white;
+            &:hover {
+                background-color: #a8a8a8;
+            }
+        }
+    }
+}
+.confirmationWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
 }

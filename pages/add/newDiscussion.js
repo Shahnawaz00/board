@@ -36,7 +36,7 @@ export default function NewDiscussion({ spaces }) {
       setMessage('unexpected error')
       //set an error banner here
     } else {
-      fetch(`${server}/api/discussions`)
+      fetch(`/api/discussions`)
       .then(res => res.json())
         .then(data => {
           setDiscussion(data.find(discussion => discussion.title === title));
