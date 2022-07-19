@@ -89,14 +89,14 @@ export default function Discussion({ discussion, users, spaces, comments, discus
       </div>
 
           {/* comments  */}
-          <h2 className={styles.commentTitle} >Comments</h2>
+          <h2 className={styles.commentTitle} >Comments ({comments.length}) </h2>
            {/* make new comment  */}
           <div className={styles.newComment} >
         <textarea placeholder="Write something..." maxLength={500}
                onChange={e => setContent(e.target.value)} value={content} ></textarea>
               <div>
                 {loading ? <Loader /> : <p>{message}</p> }
-                <p>{content.length + '/500'}</p>
+                <p className={styles.commentCounter} >{content.length + '/500'}</p>
                 <button onClick={handleSubmit} >Submit</button>
               </div>
           </div>

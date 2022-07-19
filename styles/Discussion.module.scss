@@ -119,10 +119,11 @@
     }
 
     p {
-        // letter counter
         font-size: 16px;
         color: #636466;
-        margin-right: 20px;
+    }
+    .commentCounter {
+        margin: 0 20px;
     }
 
     button {

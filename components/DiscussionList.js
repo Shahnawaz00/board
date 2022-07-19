@@ -21,7 +21,11 @@ const DiscussionList = ({ discussions, users, spaces }) => {
                  {/* user image  */}
                  {users.map(user => {
                    if (user.id === discussion.userId) {
-                     return <Image src={user.image} alt="user" width={32} height={32} className={styles.userImage} />;
+                     return (
+                       <Link href={`/profile/${discussion.userId}/discussions`}>
+                         <Image src={user.image} alt="user" width={32} height={32} className={styles.userImage} />
+                       </Link>
+                     )
                    }
                  })}
                  <div className={styles.header1_1}>
