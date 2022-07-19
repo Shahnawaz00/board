@@ -19,6 +19,9 @@ async function getDiscover(req, res) {
                         id: userId
                       }
                 }
+            },
+            orderBy: {
+                name: "asc"
             }
         });
         //filter against spaces db...
@@ -27,6 +30,9 @@ async function getDiscover(req, res) {
                 id: {
                     notIn: followedSpaces.map(space => space.id)
                 }
+            },
+            orderBy: {
+                name: "asc"
             }
         });
         // and show spaces that user is not followeing

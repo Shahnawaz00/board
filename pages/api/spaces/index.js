@@ -33,3 +33,18 @@ async function getSpaces(req, res) {
         res.status(500).json({ error: "Error getting spaces", success:false });
     }
 }
+//delete a space from the database
+async function deleteSpace(req, res) {
+    const id  = parseInt(req.query.id);
+    try {
+        const space = await prisma.space.delete({
+            where: {
+                id: id
+            }
+        });
+        return res.status(200).json(space, {success: true});
+    } catch (error) {
+        console.error("Request error", error);
+        res.status(500).json({ error: "Error deleting space", success:false });
+    }
+}

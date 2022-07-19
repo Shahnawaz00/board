@@ -19,6 +19,9 @@ async function getFollowing(req, res) {
                         id: userId
                     }
                 }
+            },
+            orderBy: {
+                name: "asc"
             }
         });
         return res.status(200).json(spaces, {success: true});
