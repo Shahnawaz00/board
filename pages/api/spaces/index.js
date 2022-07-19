@@ -20,7 +20,13 @@ export default async function handler(req, res) {
 // get requst from the client and return all spaces as a JSON object
 async function getSpaces(req, res) {
     try {
-        const spaces = await prisma.space.findMany();
+        const spaces = await prisma.space.findMany(
+            {
+                orderBy: {
+                    name: "asc"
+                }
+            }
+        );
         return res.status(200).json(spaces, {success: true});
     } catch (error) {
         console.error("Request error", error);

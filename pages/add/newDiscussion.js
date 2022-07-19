@@ -70,7 +70,7 @@ export default function NewDiscussion({ spaces }) {
           className={styles.title}
           onChange={(e) => setTitle(e.target.value)}
           value={title}
-          maxLength={50}
+          maxLength={100}
         />
         {/* content  */}
         <textarea

@@ -98,7 +98,7 @@ const NewSpace = ({ spaces }) => {
           className={styles.name}
           onChange={(e) => setName(e.target.value)}
           value={name}
-          minLength="5"
+          minLength="4"
           maxLength="20"
         />
         {/* content  */}
@@ -108,7 +108,7 @@ const NewSpace = ({ spaces }) => {
           className={styles.content}
           onChange={(e) => setDescription(e.target.value)}
           value={description}
-          maxLength="100"
+          maxLength="150"
         >
         </textarea>
         {/* bottom div  */}
