@@ -123,11 +123,15 @@
 .viewNew {
     cursor: pointer;
     color: #3752ff;
+    text-decoration: underline;
 
     &:hover {
         text-decoration: underline;
         transition: 0.3s;
     }
+}
+.error {
+    color: red;
 }
 // edit
 .submitEditDiv {

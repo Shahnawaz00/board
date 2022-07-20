@@ -6,7 +6,9 @@ import SpaceInfo from '../../../components/SpaceInfo';
 import SuggestedSpaces from '../../../components/SuggestedSpaces';
 import styles from '../../../styles/pages/Space.module.scss';
 
+
 export default function Space({ space, discussions, users, spaces, suggestedSpaces, followers }) {
+
   return (
     <div className={styles.spaceMain} >
       <Head>

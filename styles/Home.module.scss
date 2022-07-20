@@ -23,6 +23,16 @@
 }
 .emptyFeed {
   color: #616161;
+
+  span {
+    color: #3752ff;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: underline;
+      transition: 0.3s;
+    }
+  }
 }
 
 // section 2

@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import DiscussionList from '../components/DiscussionList'
 import SuggestedSpaces from '../components/SuggestedSpaces'
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 export default function Home({ spaces, users }) {
 
@@ -22,7 +23,7 @@ export default function Home({ spaces, users }) {
         }
       )
     }
-  }, [userId]);
+  }, [userId, discussions]);
 
   return (
     <div className={styles.home}>
@@ -37,7 +38,7 @@ export default function Home({ spaces, users }) {
         <div className={styles.discussions} >
           { userId ? (
           discussions.length !== 0 ? <DiscussionList discussions={discussions} spaces={spaces} users={users}/>
-              : <p className={styles.emptyFeed} >Follow some spaces to get a curated feed!</p>)
+              : <p className={styles.emptyFeed} >Follow some spaces to get a curated feed. <span><Link href='/discover'>Go Discover!</Link> </span> </p>)
             : <p className={styles.emptyFeed} >Sign in to get your personalized feed!</p>
           }
       </div>

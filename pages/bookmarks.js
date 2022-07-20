@@ -20,7 +20,7 @@ export default function Bookmarks({ spaces, users }) {
         }
       )
     }
-  }, [userId]);
+  }, [userId, bookmarks]);
 
   return (
     <div className={styles.main} >

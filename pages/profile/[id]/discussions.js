@@ -4,11 +4,27 @@ import styles from '../../../styles/components/Profile.module.scss';
 import { useSession } from 'next-auth/react';
 import DiscussionList from '../../../components/DiscussionList';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
-export default function Discussions({spaces,users, discussions,user}) {
+export default function Discussions({ spaces, users, user }) {
+  const router = useRouter();
 
   const { data: session } = useSession();
   const userId = session ? session.userId : null;
+
+  //fetch discussions from database
+  const [discussions, setDiscussions] = useState([]);
+  useEffect(() => {
+    if (userId) {
+      fetch(`/api/users/profile/getDiscussions?userId=${router.query.id}`)
+        .then(res => res.json())
+        .then(data => {
+          setDiscussions(data);
+        }
+      )
+    }
+  }, [userId, discussions, router]);
   return (
     <div className={styles.discussionsMain} >
           <Head>

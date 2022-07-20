@@ -33,7 +33,15 @@ export default function NewDiscussion({ spaces }) {
     });
     if (response.status !== 200){
       setLoading(false)
-      setMessage('unexpected error')
+      if (title === '') {
+        setMessage('Please enter a title')
+      } else if (content === '') {
+        setMessage('Please enter a content')
+      } else if (space === '') {
+        setMessage('Please select a space')
+      } else {
+        setMessage('unexpected error');
+      }
       //set an error banner here
     } else {
       fetch(`/api/discussions`)
@@ -51,7 +59,15 @@ export default function NewDiscussion({ spaces }) {
     //check response, if success is false, dont take them to success page
     } catch (error) {
       setLoading(false)
-      setMessage('unexpected error')
+      if (title === '') {
+        setMessage('Please enter a title')
+      } else if (content === '') {
+        setMessage('Please enter a content')
+      } else if (space === '') {
+        setMessage('Please select a space')
+      } else {
+        setMessage('unexpected error');
+      }
     }
   }
 
@@ -71,6 +87,7 @@ export default function NewDiscussion({ spaces }) {
           onChange={(e) => setTitle(e.target.value)}
           value={title}
           maxLength={100}
+          required
         />
         {/* content  */}
         <textarea
@@ -80,6 +97,7 @@ export default function NewDiscussion({ spaces }) {
           onChange={(e) => setContent(e.target.value)}
           value={content}
           maxLength={2000}
+          required
         >
         </textarea>
         {/* bottom div  */}
@@ -96,8 +114,10 @@ export default function NewDiscussion({ spaces }) {
           </div>
           {/* submit btn  */}
           <div className={styles.submitDiv} >
+            {/* loader while submitting, show link to discussion if successful, else error message  */}
             {loading ? <Loader />
-              : <div className={styles.viewNew} ><Link href='/discussion/[id]' as={`/discussion/${discussion.id}`} >{message}</Link></div>}
+              : message === 'View your new discussion!' ? <div className={styles.viewNew} ><Link href='/discussion/[id]' as={`/discussion/${discussion.id}`} >{message}</Link></div>
+              : <div className={styles.error}>{message}</div>}
           {userId? <button type="submit">Submit</button> : <div >Sign in to create a new discussion</div>}
           </div>
         </div>

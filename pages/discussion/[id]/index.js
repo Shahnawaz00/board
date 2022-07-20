@@ -1,15 +1,17 @@
 import Head from "next/head";
 import { server } from "../../../config";
 import Image from "next/image";
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import styles from '../../../styles/Discussion.module.scss'
 import Loader from '../../../components/Loader'
 import { useSession } from 'next-auth/react';
 import CommentList from "../../../components/CommentList";
 import MoreOptions from "../../../components/moreOptionsDiscussion/MoreOptions";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
-export default function Discussion({ discussion, users, spaces, comments, discussions }) {
+export default function Discussion({ discussion, users, spaces, discussions }) {
+  const router = useRouter()
 
   const { data: session } = useSession();
   const userId = session ? session.userId : null;
@@ -21,6 +23,20 @@ export default function Discussion({ discussion, users, spaces, comments, discus
     if (space.id === discussion.spaceId)
       return space.name;
   })
+
+  //client side comment fetch
+  const [comments, setComments] = useState([])
+
+  useEffect(() => {
+      fetch(`/api/comments/getComments?id=${router.query.id}`)
+        .then(res => res.json())
+        .then(data => {
+          setComments(data);
+        }
+      )
+
+  }, [comments, router])
+
 
   // state for new comment input
   const [content, setContent] = useState('')
@@ -115,10 +131,10 @@ export const getServerSideProps = async ({params}) => {
         headers: { "Content-Type": "application/json" },
     });
 
-    const commentsRes = await fetch(`${server}/api/comments/getComments?id=${params.id}`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-    });
+    // const commentsRes = await fetch(`${server}/api/comments/getComments?id=${params.id}`, {
+    //     method: "GET",
+    //     headers: { "Content-Type": "application/json" },
+    // });
 
     const spacesRes = await fetch(`${server}/api/spaces`, {
     method: "GET",
@@ -138,14 +154,14 @@ export const getServerSideProps = async ({params}) => {
     const spaces = await spacesRes.json()
 
     const discussion = await discussionRes.json();
-  const comments = await commentsRes.json();
+  // const comments = await commentsRes.json();
   const discussions = await discussionsRes.json();
     return {
         props: {
             discussion,
             users,
             spaces,
-            comments,
+            // comments,
             discussions
         }
     };
