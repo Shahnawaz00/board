@@ -52,7 +52,7 @@ export const getServerSideProps = async ({ params }) => {
     return {
         props: {
             discussions,
-            results,
+            // results,
             spaces,
             users,
         }
