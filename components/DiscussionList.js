@@ -22,7 +22,7 @@ const DiscussionList = ({ discussions, users, spaces }) => {
                  {users.map(user => {
                    if (user.id === discussion.userId) {
                      return (
-                       <Link href={`/profile/${discussion.userId}/discussions`}>
+                       <Link href={`/profile/${discussion.userId}/discussions`} key={user.id} >
                          <Image src={user.image} alt="user" width={32} height={32} className={styles.userImage} />
                        </Link>
                      )
@@ -50,7 +50,7 @@ const DiscussionList = ({ discussions, users, spaces }) => {
                     <p className={styles.space} >
                     {spaces.map(space => {
                       if (space.id === discussion.spaceId) {
-                        return <Link href='/space/[id]' as={`/space/${space.id}`} >{space.name}</Link>
+                        return <Link href='/space/[id]' as={`/space/${space.id}`} key={space.id}>{space.name}</Link>
                       }
                     })}
                     </p>
